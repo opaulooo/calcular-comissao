@@ -78,7 +78,7 @@ async function calculaBonus(comissao) {
             })
             if (i != -1) {
                 if (element.qtd >= metas[i].qtd) {
-                    element.valor = element.valor * 2;
+                    element.valor = element.valor * 1.03;
                 }
             }
             element.valor = parseFloat(element.valor.toFixed(2))

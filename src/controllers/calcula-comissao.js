@@ -1,7 +1,7 @@
 const metas = require('../data/metas')
 
 /* 
-    Função para calcular a comissao dados por vendedores e meses somando os valores
+    Função para calcular a comissao por vendedores e meses somando os valores
 
     retorno no formato
     vendedores =
@@ -68,6 +68,20 @@ async function calculaComissao(comissao) {
     })
 }
 
+/* 
+    Função para calcular o bônus de cada vendedor por cada mês e ajustar o
+    valor final para duas casas decimais em formato de String
+
+    retorno no formato
+    vendedores =
+    [   
+        {
+            "vendedor": 0,
+            "mes": 0,
+            "valor": "0.00"
+        },
+    ]
+*/
 async function calculaBonus(comissao) {
 
     return new Promise(async (res, rej) => {
@@ -90,14 +104,6 @@ async function calculaBonus(comissao) {
 
 
 module.exports = {
-    async getCalculaComissao(req, res) {
-
-        console.log(metas)
-
-        res.send(null)
-    },
-
-
     async postCalculaComissao(req, res) {
         var comissao = req.body;
         var comissoes = null;

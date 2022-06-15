@@ -1,3 +1,36 @@
+API designada para calcular a comissão dos vendedores
+referente às vendas feitas, recebendo também um bônus 
+caso atingir a meta estipulada para o mês específico.
+
+--------------------------------------------------------
+Versões em minha máquina:
+
+npm: 8.1.0
+node: 16.13.0
+--------------------------------------------------------
+
+Dependências instaladas:
+
+npm install
+npm install --save-dev nodemon
+npm install chai
+npm install --save-dev testdouble
+npm install mocha
+--------------------------------------------------------
+
+Para iniciar a API com o nodemon, executar no console:
+
+npm start
+
+
+Para iniciar a API sem o nodemon, executar no console:
+
+node server.js
+
+--------------------------------------------------------
+
+#Proposta a ser executada:
+
 1 - A API precisa calcular a comissao que um vendedor deve receber, segundo a
 seguinte regra:
 

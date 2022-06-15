@@ -81,7 +81,7 @@ async function calculaBonus(comissao) {
                     element.valor = element.valor * 1.03;
                 }
             }
-            element.valor = parseFloat(element.valor.toFixed(2))
+            element.valor = element.valor.toFixed(2)
         });
 
         res(comissao)

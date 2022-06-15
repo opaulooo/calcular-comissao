@@ -1,35 +1,40 @@
-API designada para calcular a comissão dos vendedores
-referente às vendas feitas, recebendo também um bônus 
-caso atingir a meta estipulada para o mês específico.
-
---------------------------------------------------------
-Versões em minha máquina:
-
-npm: 8.1.0
-node: 16.13.0
---------------------------------------------------------
-
-Dependências instaladas:
-
-npm install
-npm install --save-dev nodemon
-npm install chai
-npm install --save-dev testdouble
-npm install mocha
---------------------------------------------------------
-
-Para iniciar a API com o nodemon, executar no console:
-
-npm start
+### API designada para calcular a comissão dos vendedores referente às vendas feitas, recebendo também um bônus  caso atingir a meta estipulada para o mês específico.
 
 
-Para iniciar a API sem o nodemon, executar no console:
 
-node server.js
 
---------------------------------------------------------
+### Versões em minha máquina:
 
-#Proposta a ser executada:
+- npm: 8.1.0
+- node: 16.13.0
+
+
+
+
+### Dependências instaladas:
+
+- npm install
+- npm install --save-dev nodemon
+- npm install chai
+- npm install --save-dev testdouble
+- npm install mocha
+
+
+
+
+### Para iniciar a API com o nodemon, executar no console:
+
+- npm start
+
+
+### Para iniciar a API sem o nodemon, executar no console:
+
+- node server.js
+
+
+
+
+## Proposta a ser executada:
 
 1 - A API precisa calcular a comissao que um vendedor deve receber, segundo a
 seguinte regra:
@@ -38,62 +43,9 @@ seguinte regra:
 - 1% para vendas acima até 300 reais
 - 3% para vendas entre 300 e 1000 reais
 - 5% para vendas acima de 1000 reais
-- O vendedor receberá um adicional por atingimento de META. Se tiver atingido a meta do mês o vendedor ganha 
-  mais 3%. As metas são referentes a quantidade de vendas e estão
+- O vendedor receberá um adicional por atingimento de META. Se tiver atingido a meta do mês o vendedor ganha mais 3%. As metas são referentes a quantidade de vendas
 
-abaixo:
-
-const metas =
-[
-    {
-        mes = 1,
-        qtd = 5
-    },
-    {
-        mes = 2,
-        qtd = 3
-    },
-    {
-        mes = 3,
-        qtd = 2
-    },
-    {
-        mes = 4,
-        qtd = 2
-    },
-    {
-        mes = 5,
-        qtd = 5
-    },
-    {
-        mes = 6,
-        qtd = 60
-    },
-    {
-        mes = 8,
-        qtd = 2
-    },
-    {
-        mes = 9,
-        qtd = 4
-    },
-    {
-        mes = 10,
-        qtd = 4
-    },
-    {
-        mes = 11,
-        qtd = 7
-    },
-    {
-        mes = 12,
-        qtd = 2
-    }
-]
-
-
-
-O método vai receber um array de pedidos, através de um POST, exemplo:
+#### O método vai receber um array de pedidos, através de um POST, exemplo:
 
 
 POST api/calcula-comissao
@@ -101,40 +53,10 @@ POST api/calcula-comissao
     "pedidos": 
     [
         {
-            "vendedor": 1,
-            "data": "2022-03-01",
-            "valor" = 500.34
-        },
-        {
-            "vendedor": 1,
-            "data": "2022-03-01",
-            "valor" = 1000.22
-        },
-        {
-            "vendedor": 1,
-            "data": "2022-03-01",
-            "valor" = 100.35
-        },
-        {
-            "vendedor": 1,
-            "data": "2022-03-01",
-            "valor" = 22.34
-        },
-        {
-            "vendedor": 1,
-            "data": "2022-04-01",
-            "valor" = 5000.34
-        },
-        {
-            "vendedor": 2,
-            "data": "2022-03-01",
-            "valor" = 2000.34
-        },
-        {
-            "vendedor": 2,
-            "data": "2022-04-01",
-            "valor" = 3000.34
-        },
+            "vendedor": 0,
+            "data": "aaaa-mm-dd",
+            "valor": 0
+        }
     ]
 }
 
@@ -143,14 +65,14 @@ e o response será a comissao de cada vendedor em cada mes (xx,xx será na verda
     "comissoes": 
     [
         {
-            "vendedor": 1,
-            "mes": 3,
-            "valor": "xx,xx"
+            "vendedor":0,
+            "mes": 0,
+            "valor": "0.00"
         },
         {
-            "vendedor": 2,
-            "mes": 4,
-            "valor": "xx,xx"
+            "vendedor": 0,
+            "mes": 0,
+            "valor": "0.00"
         }
     ]
 }
@@ -158,29 +80,24 @@ e o response será a comissao de cada vendedor em cada mes (xx,xx será na verda
 
 
 
-BONUS: Testes de unidade
+## BONUS: Testes de unidade
 
 
-Teste 1 - Vendedor deve receber bonus se atingir a meta
+#### Teste 1 - Vendedor deve receber bonus se atingir a meta
 ENTRADA:
 {
     "pedidos":
     [
         {
-            "vendedor": 1,
-            "data": "2022-03-01",
-            "valor" = 100,00
+            "vendedor": 0,
+            "mes": 0,
+            "valor": 0.00
         },
         {
-            "vendedor": 1,
-            "data": "2022-03-01",
-            "valor" = 100,00
-        },
-        {
-            "vendedor": 1,
-            "data": "2022-03-01",
-            "valor" = 100,00
-        },
+            "vendedor": 0,
+            "mes": 0,
+            "valor": 0.00
+        }
     ]
 }
 
@@ -189,24 +106,24 @@ SAIDA:
     "comissoes": 
     [
         {
-            "vendedor": 1,
-            "mes": 3,
-            valor: "6,00"
-        },
+            "vendedor": 0,
+            "mes": 0,
+            "valor": "0.00"
+        }
     ]
 }
 
 
 
-Teste 2 - Vendedor deve não receber bonus se atingir a meta
+#### Teste 2 - Vendedor deve não receber bonus se atingir a meta
 ENTRADA:
 {
     "pedidos":
     [
         {
-            "vendedor": 1,
-            "data": "2022-03-01",
-            "valor" = 100,00
+            "vendedor": 0,
+            "mes": 0,
+            "valor": 0.00
         }
     ]
 }
@@ -216,25 +133,25 @@ SAIDA:
     "comissoes":
     [
         {
-            "vendedor": 1,
-            "mes": 3,
-            "valor": 1,00
+            "vendedor": 0,
+            "mes": 0,
+            "valor": "0.00"
         },
     ]
 }
 
 
 
-Teste 3 - Vendedor deve receber comissao segundo a faixa
+#### Teste 3 - Vendedor deve receber comissao segundo a faixa
 ENTRADA:
 {
     "pedidos":
     [
         {
-            "vendedor": 1,
-            "data": "2022-03-01",
-            "valor" = 1000,00
-        },
+            "vendedor": 0,
+            "mes": 0,
+            "valor": 0.00
+        }
     ]
 }
 
@@ -243,9 +160,9 @@ SAIDA:
     "comissoes": 
     [
         {
-            "vendedor": 1,
-            "mes": 3,
-            "valor": 30,00
-        },
+            "vendedor": 0,
+            "mes": 0,
+            "valor": "0.00"
+        }
     ]
 }

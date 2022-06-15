@@ -1,7 +1,7 @@
-### API designada para calcular a comissão dos vendedores referente às vendas feitas, recebendo também um bônus  caso atingir a meta estipulada para o mês específico.
+## API para calcular a comissão dos vendedores referente às vendas feitas, recebendo também um bônus  caso atingir a meta estipulada para o mês específico.
 
 
-
+<br/><br/>
 
 ### Versões em minha máquina:
 
@@ -10,31 +10,55 @@
 
 
 
+<br/><br/>
 
 ### Dependências instaladas:
 
 - npm install
 - npm install --save-dev nodemon
-- npm install chai
-- npm install --save-dev testdouble
-- npm install mocha
+- npm install jest
+- npm install supertest
 
 
 
+<br/><br/>
 
 ### Para iniciar a API com o nodemon, executar no console:
 
 - npm start
 
+<br/><br/>
 
 ### Para iniciar a API sem o nodemon, executar no console:
 
-- node server.js
+- npm run server
+
+<br/><br/>
+
+## Tecnologias usadas:
+
+- NodeJS
+- Express
+- Jest
+
+<br/><br/>
+
+## Programas usados:
+
+- Visual Studio Code
+- Postman
+
+<br/><br/>
+
+## Testes Unitários foram feitos em:
+
+- Rota padrão da api ('/')
+- Rota de POST para o cálculo das comissões ('/calcula-comissao') 
+
+<br/><br/>
 
 
-
-
-## Proposta a ser executada:
+# Proposta a ser executada:
 
 1 - A API precisa calcular a comissao que um vendedor deve receber, segundo a
 seguinte regra:
@@ -45,7 +69,9 @@ seguinte regra:
 - 5% para vendas acima de 1000 reais
 - O vendedor receberá um adicional por atingimento de META. Se tiver atingido a meta do mês o vendedor ganha mais 3%. As metas são referentes a quantidade de vendas
 
-#### O método vai receber um array de pedidos, através de um POST, exemplo:
+<br/>
+
+### O método vai receber um array de pedidos, através de um POST, exemplo:
 
 
 POST api/calcula-comissao
@@ -59,6 +85,8 @@ POST api/calcula-comissao
         }
     ]
 }
+
+<br/>
 
 e o response será a comissao de cada vendedor em cada mes (xx,xx será na verdade o valor calculado):
 {
@@ -78,12 +106,13 @@ e o response será a comissao de cada vendedor em cada mes (xx,xx será na verda
 }
 
 
-
+<br/><br/>
 
 ## BONUS: Testes de unidade
 
 
-#### Teste 1 - Vendedor deve receber bonus se atingir a meta
+### Teste 1 - Vendedor deve receber bonus se atingir a meta
+
 ENTRADA:
 {
     "pedidos":
@@ -114,8 +143,10 @@ SAIDA:
 }
 
 
+<br/><br/>
 
-#### Teste 2 - Vendedor deve não receber bonus se atingir a meta
+### Teste 2 - Vendedor deve não receber bonus se atingir a meta
+
 ENTRADA:
 {
     "pedidos":
@@ -141,8 +172,10 @@ SAIDA:
 }
 
 
+<br/><br/>
 
-#### Teste 3 - Vendedor deve receber comissao segundo a faixa
+### Teste 3 - Vendedor deve receber comissao segundo a faixa
+
 ENTRADA:
 {
     "pedidos":

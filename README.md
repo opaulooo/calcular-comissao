@@ -32,8 +32,7 @@
 ### Para iniciar a API sem o nodemon, executar no console:
 
 - npm run server
-
-<br/><br/>
+  
 
 ## Tecnologias usadas:
 
@@ -57,6 +56,12 @@
 
 <br/><br/>
 
+
+### Para executar os Testes Unitários, executar no console:
+
+- npm test
+
+<br/><br/>
 
 # Proposta a ser executada:
 

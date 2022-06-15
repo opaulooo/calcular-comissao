@@ -106,15 +106,15 @@ module.exports = {
 
                 comissoes = response2;
 
-                console.log('\nComissões dos vendedores retornadas com sucesso!\n')
+                // console.log('\nComissões dos vendedores retornadas com sucesso!\n')
                 res.send({
                     comissoes
                 })
             })
 
         }).catch((err) => {
-            console.log('\nHouve um erro ao retornar as comissões dos vendedores!\n')
-            console.log(err)
+            // console.log('\nHouve um erro ao retornar as comissões dos vendedores!\n')
+            // console.log(err)
             res.send(err)
         })
     },

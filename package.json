@@ -1,11 +1,12 @@
 {
   "dependencies": {
     "express": "^4.18.1",
-    "mocha": "^10.0.0"
+    "mocha": "^10.0.0",
+    "supertest": "^6.2.3"
   },
   "scripts": {
-    "start": "nodemon server.js",
-    "test-comissao": "mocha --config=test/comissao/mocha.json --node-env=test --exit"
+    "start": "nodemon src/index.js",
+    "test": "jest"
   },
   "name": "calcular-comissao",
   "description": "Cálculo de Comissão",
@@ -15,6 +16,7 @@
   "author": "Paulo Victor",
   "license": "ISC",
   "devDependencies": {
+    "jest": "^28.1.1",
     "nodemon": "^2.0.16",
     "request": "^2.88.2",
     "testdouble": "^3.16.6"

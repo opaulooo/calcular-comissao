@@ -9,7 +9,8 @@ const metas = require('../data/metas')
         {
             "vendedor": 0,
             "mes": 0,
-            "valor": 0
+            "valor": 0,
+            "qtd": 0
         },
     ]
 */
